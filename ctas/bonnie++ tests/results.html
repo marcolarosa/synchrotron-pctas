@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<HTML>
+<HEAD><TITLE>Bonnie++ V1.03e Benchmark results</TITLE>
+<STYLE type="text/css">
+TD.header {text-align: center; backgroundcolor: "#CCFFFF" }
+TD.rowheader {text-align: center; backgroundcolor: "#CCCFFF" }
+TD.size {text-align: center; backgroundcolor: "#CCCFFF" }
+TD.ksec {text-align: center; fontstyle: italic }
+</STYLE>
+<BODY>
+<TABLE ALIGN=center BORDER=3 CELLPADDING=2 CELLSPACING=1>
+<TR><TD COLSPAN=2 class="header"></TD>
+<TD COLSPAN=6 class="header"><FONT SIZE=+2><B>Sequential Output</B></FONT></TD>
+<TD COLSPAN=4 class="header"><FONT SIZE=+2><B>Sequential Input</B></FONT></TD>
+<TD COLSPAN=2 ROWSPAN=2 class="header"><FONT SIZE=+2><B>Random<BR>Seeks</B></FONT></TD>
+<TD COLSPAN=1 class="header"></TD>
+<TD COLSPAN=6 class="header"><FONT SIZE=+2><B>Sequential Create</B></FONT></TD>
+<TD COLSPAN=6 class="header"><FONT SIZE=+2><B>Random Create</B></FONT></TD>
+</tr>
+<TR><TD></TD><TD>Size:Chunk Size</TD><TD COLSPAN=2>Per Char</TD><TD COLSPAN=2>Block</TD><TD COLSPAN=2>Rewrite</TD><TD COLSPAN=2>Per Char</TD><TD COLSPAN=2>Block</TD><TD>Num Files</TD><TD COLSPAN=2>Create</TD><TD COLSPAN=2>Read</TD><TD COLSPAN=2>Delete</TD><TD COLSPAN=2>Create</TD><TD COLSPAN=2>Read</TD><TD COLSPAN=2>Delete</TD></TR><TR><TD COLSPAN=2></TD><TD class="ksec"><FONT SIZE=-2>K/sec</FONT></TD><TD class="ksec"><FONT SIZE=-2>% CPU</FONT></TD><TD class="ksec"><FONT SIZE=-2>K/sec</FONT></TD><TD class="ksec"><FONT SIZE=-2>% CPU</FONT></TD><TD class="ksec"><FONT SIZE=-2>K/sec</FONT></TD><TD class="ksec"><FONT SIZE=-2>% CPU</FONT></TD><TD class="ksec"><FONT SIZE=-2>K/sec</FONT></TD><TD class="ksec"><FONT SIZE=-2>% CPU</FONT></TD><TD class="ksec"><FONT SIZE=-2>K/sec</FONT></TD><TD class="ksec"><FONT SIZE=-2>% CPU</FONT></TD><TD class="ksec"><FONT SIZE=-2>/ sec</FONT></TD><TD class="ksec"><FONT SIZE=-2>% CPU</FONT></TD><TD></TD><TD class="ksec"><FONT SIZE=-2>/ sec</FONT></TD><TD class="ksec"><FONT SIZE=-2>% CPU</FONT></TD><TD class="ksec"><FONT SIZE=-2>/ sec</FONT></TD><TD class="ksec"><FONT SIZE=-2>% CPU</FONT></TD><TD class="ksec"><FONT SIZE=-2>/ sec</FONT></TD><TD class="ksec"><FONT SIZE=-2>% CPU</FONT></TD><TD class="ksec"><FONT SIZE=-2>/ sec</FONT></TD><TD class="ksec"><FONT SIZE=-2>% CPU</FONT></TD><TD class="ksec"><FONT SIZE=-2>/ sec</FONT></TD><TD class="ksec"><FONT SIZE=-2>% CPU</FONT></TD><TD class="ksec"><FONT SIZE=-2>/ sec</FONT></TD><TD class="ksec"><FONT SIZE=-2>% CPU</FONT></TD></TR>
+<TR><TD class="rowheader"><FONT SIZE=+1><B>fs.massive.synchrotron.org.au - RAID 5 set</B></FONT></TD><TD class="size">48192M</TD><TD>89834</TD><TD>99</TD><TD>162874</TD><TD>16</TD><TD>45868</TD><TD>4</TD><TD>79656</TD><TD>95</TD><TD>341643</TD><TD>15</TD><TD>433.6</TD><TD>1</TD><TD>16</TD><TD>+++++</TD><TD>+++</TD><TD>+++++</TD><TD>+++</TD><TD>+++++</TD><TD>+++</TD><TD>+++++</TD><TD>+++</TD><TD>+++++</TD><TD>+++</TD><TD>+++++</TD><TD>+++</TD></TR>
+<TR><TD class="rowheader"><FONT SIZE=+1><B></B></FONT></TD><TD class="size"></TD><TD></TD></TR>
+<TR><TD class="rowheader"><FONT SIZE=+1><B>cn2.massive.synchrotron.org.au - single disk</B></FONT></TD><TD class="size">48312M</TD><TD>69179</TD><TD>68</TD><TD>71368</TD><TD>2</TD><TD>32900</TD><TD>2</TD><TD>61820</TD><TD>67</TD><TD>91170</TD><TD>3</TD><TD>333.1</TD><TD>0</TD><TD>16</TD><TD>390</TD><TD>1</TD><TD>+++++</TD><TD>+++</TD><TD>272</TD><TD>0</TD><TD>388</TD><TD>1</TD><TD>+++++</TD><TD>+++</TD><TD>302</TD><TD>0</TD></TR>
+<TR><TD class="rowheader"><FONT SIZE=+1><B>cn2.massive.synchrotron.org.au - RAID 5 set over NFS</B></FONT></TD><TD class="size">48312M</TD><TD>93912</TD><TD>93</TD><TD>98861</TD><TD>3</TD><TD>27240</TD><TD>2</TD><TD>46168</TD><TD>49</TD><TD>46746</TD><TD>1</TD><TD>528.0</TD><TD>0</TD><TD>16</TD><TD>4061</TD><TD>14</TD><TD>18833</TD><TD>18</TD><TD>3864</TD><TD>11</TD><TD>4107</TD><TD>13</TD><TD>+++++</TD><TD>+++</TD><TD>4070</TD><TD>11</TD></TR>
+
+</TABLE>
+</BODY>
+</HTML>
+

@@ -1,0 +1,106 @@
+####
+#### parallel performance testing
+####  -> sinogram creation
+####
+
+###
+### writing results directly to disk
+###
+
+## 1 process
+mlarosa@cn2:~/ctas$ time mpirun -np 1 pctas.sh 
+V2 ::: 1267691308 ::: Process: 0 started :::: 511 to process :::: start 0, end 510 
+V2 ::: 1267692278 ::: Process: 0 ended 
+
+real	16m9.710s
+user	11m16.170s
+sys	4m54.930s
+
+## 2 processes
+mlarosa@cn2:~/ctas$ time mpirun -np 2 pctas.sh 
+V2 ::: 1267692340 ::: Process: 0 started :::: 255 to process :::: start 0, end 254 
+V2 ::: 1267692340 ::: Process: 1 started :::: 255 to process :::: start 255, end 510 
+V2 ::: 1267692761 ::: Process: 0 ended 
+V2 ::: 1267692888 ::: Process: 1 ended 
+
+real	9m8.333s
+user	11m15.080s
+sys	4m55.820s
+
+## 4 processes
+mlarosa@cn2:~/ctas$ time mpirun -np 4 pctas.sh 
+V2 ::: 1267692912 ::: Process: 0 started :::: 127 to process :::: start 0, end 126 
+V2 ::: 1267692912 ::: Process: 1 started :::: 127 to process :::: start 127, end 253 
+V2 ::: 1267692912 ::: Process: 2 started :::: 127 to process :::: start 254, end 380 
+V2 ::: 1267692912 ::: Process: 3 started :::: 127 to process :::: start 381, end 510 
+V2 ::: 1267693147 ::: Process: 3 ended 
+V2 ::: 1267693151 ::: Process: 2 ended 
+V2 ::: 1267693210 ::: Process: 1 ended 
+V2 ::: 1267693218 ::: Process: 0 ended 
+
+real	5m5.735s
+user	12m34.430s
+sys	5m22.320s
+
+## 8 processes
+mlarosa@cn2:~/ctas$ time mpirun -np 8 pctas.sh 
+V2 ::: 1267693383 ::: Process: 0 started :::: 63 to process :::: start 0, end 62 
+V2 ::: 1267693383 ::: Process: 1 started :::: 63 to process :::: start 63, end 125 
+V2 ::: 1267693383 ::: Process: 2 started :::: 63 to process :::: start 126, end 188 
+V2 ::: 1267693383 ::: Process: 3 started :::: 63 to process :::: start 189, end 251 
+V2 ::: 1267693383 ::: Process: 4 started :::: 63 to process :::: start 252, end 314 
+V2 ::: 1267693383 ::: Process: 5 started :::: 63 to process :::: start 315, end 377 
+V2 ::: 1267693383 ::: Process: 6 started :::: 63 to process :::: start 378, end 440 
+V2 ::: 1267693383 ::: Process: 7 started :::: 63 to process :::: start 441, end 510 
+V2 ::: 1267693565 ::: Process: 3 ended 
+V2 ::: 1267693579 ::: Process: 2 ended 
+V2 ::: 1267693583 ::: Process: 5 ended 
+V2 ::: 1267693585 ::: Process: 6 ended 
+V2 ::: 1267693592 ::: Process: 1 ended 
+V2 ::: 1267693598 ::: Process: 4 ended 
+V2 ::: 1267693600 ::: Process: 0 ended 
+V2 ::: 1267693604 ::: Process: 7 ended 
+
+real	3m40.835s
+user	18m20.920s
+sys	7m44.170s
+
+## 16 processes
+mlarosa@cn2:~/ctas$ time mpirun -np 16 pctas.sh 
+V2 ::: 1267693807 ::: Process: 0 started :::: 31 to process :::: start 0, end 30 
+V2 ::: 1267693807 ::: Process: 1 started :::: 31 to process :::: start 31, end 61 
+V2 ::: 1267693807 ::: Process: 2 started :::: 31 to process :::: start 62, end 92 
+V2 ::: 1267693807 ::: Process: 3 started :::: 31 to process :::: start 93, end 123 
+V2 ::: 1267693807 ::: Process: 4 started :::: 31 to process :::: start 124, end 154
+V2 ::: 1267693807 ::: Process: 5 started :::: 31 to process :::: start 155, end 185 
+V2 ::: 1267693807 ::: Process: 6 started :::: 31 to process :::: start 186, end 216 
+V2 ::: 1267693807 ::: Process: 7 started :::: 31 to process :::: start 217, end 247
+V2 ::: 1267693807 ::: Process: 8 started :::: 31 to process :::: start 248, end 278
+V2 ::: 1267693807 ::: Process: 9 started :::: 31 to process :::: start 279, end 309 
+V2 ::: 1267693807 ::: Process: 10 started :::: 31 to process :::: start 310, end 340 
+V2 ::: 1267693807 ::: Process: 11 started :::: 31 to process :::: start 341, end 371 
+V2 ::: 1267693807 ::: Process: 12 started :::: 31 to process :::: start 372, end 402 
+V2 ::: 1267693807 ::: Process: 13 started :::: 31 to process :::: start 403, end 433 
+V2 ::: 1267693807 ::: Process: 14 started :::: 31 to process :::: start 434, end 464 
+V2 ::: 1267693807 ::: Process: 15 started :::: 31 to process :::: start 465, end 510 
+V2 ::: 1267693975 ::: Process: 9 ended 
+V2 ::: 1267693977 ::: Process: 6 ended 
+V2 ::: 1267693981 ::: Process: 0 ended 
+V2 ::: 1267693982 ::: Process: 1 ended 
+V2 ::: 1267693984 ::: Process: 3 ended 
+V2 ::: 1267693986 ::: Process: 13 ended 
+V2 ::: 1267693987 ::: Process: 7 ended 
+V2 ::: 1267693987 ::: Process: 4 ended 
+V2 ::: 1267693988 ::: Process: 10 ended 
+V2 ::: 1267693988 ::: Process: 12 ended 
+V2 ::: 1267693994 ::: Process: 8 ended 
+V2 ::: 1267693994 ::: Process: 2 ended 
+V2 ::: 1267693996 ::: Process: 5 ended 
+V2 ::: 1267693996 ::: Process: 11 ended 
+V2 ::: 1267693996 ::: Process: 14 ended 
+V2 ::: 1267694020 ::: Process: 15 ended 
+
+real	3m32.610s
+user	17m9.170s
+sys	7m56.170s
+

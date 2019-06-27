@@ -1,0 +1,13 @@
+###
+### bonnie++ tests to establish some boundaries
+###
+
+## single disk in compute node (not OS disk)
+cn2.massive.synchrotron.org.au,48312M,69179,68,71368,2,32900,2,61820,67,91170,3,333.1,0,16,390,1,+++++,+++,272,0,388,1,+++++,+++,302,0
+
+## RAID 5 set in NAS
+fs.massive.synchrotron.org.au,48192M,89834,99,162874,16,45868,4,79656,95,341643,15,433.6,1,16,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++,+++++,+++
+
+## RAID 5 set in NAS over NFS
+cn2.massive.synchrotron.org.au,48312M,93912,93,98861,3,27240,2,46168,49,46746,1,528.0,0,16,4061,14,18833,18,3864,11,4107,13,+++++,+++,4070,11
+

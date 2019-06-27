@@ -1,0 +1,48 @@
+####
+#### parallel performance testing
+####  -> background removal
+####
+
+###
+### writing results to nfs share
+###
+
+## 4 processes
+time mpirun -np 4 pctas.sh
+V2 ::: 1268178561 ::: Process: 0 started :::: 225 to process :::: start 1, end 225 
+V2 ::: 1268178561 ::: Process: 1 started :::: 225 to process :::: start 226, end 450 
+V2 ::: 1268178561 ::: Process: 2 started :::: 225 to process :::: start 451, end 675 
+V2 ::: 1268178561 ::: Process: 3 started :::: 225 to process :::: start 676, end 900 
+V2 ::: 1268180738 ::: Process: 0 ended 
+V2 ::: 1268180861 ::: Process: 1 ended 
+V2 ::: 1268180961 ::: Process: 2 ended 
+V2 ::: 1268180978 ::: Process: 3 ended 
+
+real	40m17.382s
+user	81m42.270s
+sys	12m12.670s
+
+## 8 processes
+time mpirun -np 8 pctas.sh
+V2 ::: 1268181283 ::: Process: 0 started :::: 112 to process :::: start 1, end 112 
+V2 ::: 1268181283 ::: Process: 1 started :::: 112 to process :::: start 113, end 224 
+V2 ::: 1268181283 ::: Process: 2 started :::: 112 to process :::: start 225, end 336 
+V2 ::: 1268181283 ::: Process: 3 started :::: 112 to process :::: start 337, end 448 
+V2 ::: 1268181283 ::: Process: 4 started :::: 112 to process :::: start 449, end 560 
+V2 ::: 1268181283 ::: Process: 6 started :::: 112 to process :::: start 673, end 784 
+V2 ::: 1268181283 ::: Process: 7 started :::: 112 to process :::: start 785, end 900 
+V2 ::: 1268181283 ::: Process: 5 started :::: 112 to process :::: start 561, end 672 
+V2 ::: 1268183068 ::: Process: 0 ended 
+V2 ::: 1268183100 ::: Process: 1 ended 
+V2 ::: 1268183145 ::: Process: 2 ended 
+V2 ::: 1268183151 ::: Process: 3 ended 
+V2 ::: 1268183169 ::: Process: 4 ended 
+V2 ::: 1268183178 ::: Process: 5 ended 
+V2 ::: 1268183193 ::: Process: 6 ended 
+V2 ::: 1268183234 ::: Process: 7 ended 
+
+real	32m31.319s
+user	81m46.030s
+sys	12m43.300s
+
+

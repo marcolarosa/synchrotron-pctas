@@ -1,0 +1,121 @@
+####
+#### parallel performance testing
+####  -> background removal
+####
+
+###
+### writing results to single disk
+###
+
+## 1 process
+mlarosa@cn2:~/ctas$ time mpirun -np 1 pctas.sh 
+
+real	11m45.216s
+user	6m23.290s
+sys	7m21.190s
+
+## 2 processes
+mlarosa@cn2:~/ctas$ time mpirun -np 2 pctas.sh 
+V1 ::: 1267674119 ::: Process: 0 started :::: 450 to process :::: start 1, end 450 
+V1 ::: 1267674119 ::: Process: 1 started :::: 450 to process :::: start 451, end 900 
+V1 ::: 1267674327 ::: Process: 0 ended 
+V1 ::: 1267674625 ::: Process: 1 ended 
+
+real	8m25.703s
+user	6m40.530s
+sys	7m26.460s
+
+process 0 runtime: 208 seconds
+process 1 runtime: 506 seconds
+
+## 4 processes
+mlarosa@cn2:~/ctas$ time mpirun -np 4 pctas.sh 
+V1 ::: 1267683326 ::: Process: 2 started :::: 225 to process :::: start 451, end 675 
+V1 ::: 1267683326 ::: Process: 3 started :::: 225 to process :::: start 676, end 900 
+V1 ::: 1267683326 ::: Process: 1 started :::: 225 to process :::: start 226, end 450 
+V1 ::: 1267683326 ::: Process: 0 started :::: 225 to process :::: start 1, end 225 
+V1 ::: 1267683396 ::: Process: 0 ended 
+V1 ::: 1267683477 ::: Process: 1 ended 
+V1 ::: 1267683555 ::: Process: 2 ended 
+V1 ::: 1267683630 ::: Process: 3 ended 
+
+real	5m4.035s
+user	6m42.930s
+sys	7m5.310s
+
+
+process 0 runtime: 70  seconds
+process 1 runtime: 151 seconds
+process 2 runtime: 229 seconds
+process 3 runtime: 304 seconds
+
+## 8 processes
+mlarosa@cn2:~/ctas$ time mpirun -np 8 pctas.sh 
+V1 ::: 1267683820 ::: Process: 0 started :::: 112 to process :::: start 1, end 112 
+V1 ::: 1267683820 ::: Process: 1 started :::: 112 to process :::: start 113, end 224 
+V1 ::: 1267683820 ::: Process: 3 started :::: 112 to process :::: start 337, end 448 
+V1 ::: 1267683820 ::: Process: 5 started :::: 112 to process :::: start 561, end 672 
+V1 ::: 1267683820 ::: Process: 4 started :::: 112 to process :::: start 449, end 560 
+V1 ::: 1267683820 ::: Process: 6 started :::: 112 to process :::: start 673, end 784 
+V1 ::: 1267683820 ::: Process: 2 started :::: 112 to process :::: start 225, end 336 
+V1 ::: 1267683820 ::: Process: 7 started :::: 112 to process :::: start 785, end 896 
+V1 ::: 1267683848 ::: Process: 0 ended 
+V1 ::: 1267683874 ::: Process: 1 ended 
+V1 ::: 1267683899 ::: Process: 2 ended 
+V1 ::: 1267683923 ::: Process: 3 ended 
+V1 ::: 1267683944 ::: Process: 4 ended 
+V1 ::: 1267683964 ::: Process: 5 ended 
+V1 ::: 1267683983 ::: Process: 6 ended 
+V1 ::: 1267684001 ::: Process: 7 ended 
+
+real	3m1.686s
+user	6m33.020s
+sys	6m47.440s
+
+process 0 runtime: 28  seconds
+process 1 runtime: 54  seconds
+process 2 runtime: 79  seconds
+process 3 runtime: 103 seconds
+process 4 runtime: 124 seconds
+process 5 runtime: 144 seconds
+process 6 runtime: 163 seconds
+process 7 runtime: 181 seconds
+
+## 16 processes
+mlarosa@cn2:~/ctas$ time mpirun -np 16 pctas.sh 
+V1 ::: 1267684643 ::: Process: 1 started :::: 56 to process :::: start 57, end 112 
+V1 ::: 1267684643 ::: Process: 2 started :::: 56 to process :::: start 113, end 168 
+V1 ::: 1267684643 ::: Process: 3 started :::: 56 to process :::: start 169, end 224 
+V1 ::: 1267684643 ::: Process: 0 started :::: 56 to process :::: start 1, end 56 
+V1 ::: 1267684643 ::: Process: 7 started :::: 56 to process :::: start 393, end 448 
+V1 ::: 1267684643 ::: Process: 4 started :::: 56 to process :::: start 225, end 280 
+V1 ::: 1267684643 ::: Process: 5 started :::: 56 to process :::: start 281, end 336 
+V1 ::: 1267684643 ::: Process: 14 started :::: 56 to process :::: start 785, end 840 
+V1 ::: 1267684643 ::: Process: 11 started :::: 56 to process :::: start 617, end 672 
+V1 ::: 1267684643 ::: Process: 12 started :::: 56 to process :::: start 673, end 728 
+V1 ::: 1267684643 ::: Process: 6 started :::: 56 to process :::: start 337, end 392 
+V1 ::: 1267684643 ::: Process: 9 started :::: 56 to process :::: start 505, end 560 
+V1 ::: 1267684643 ::: Process: 13 started :::: 56 to process :::: start 729, end 784 
+V1 ::: 1267684643 ::: Process: 8 started :::: 56 to process :::: start 449, end 504 
+V1 ::: 1267684643 ::: Process: 10 started :::: 56 to process :::: start 561, end 616 
+V1 ::: 1267684643 ::: Process: 15 started :::: 56 to process :::: start 841, end 896 
+V1 ::: 1267684659 ::: Process: 0 ended 
+V1 ::: 1267684670 ::: Process: 1 ended 
+V1 ::: 1267684681 ::: Process: 2 ended 
+V1 ::: 1267684690 ::: Process: 3 ended 
+V1 ::: 1267684699 ::: Process: 4 ended 
+V1 ::: 1267684709 ::: Process: 5 ended 
+V1 ::: 1267684717 ::: Process: 6 ended 
+V1 ::: 1267684723 ::: Process: 7 ended 
+V1 ::: 1267684729 ::: Process: 8 ended 
+V1 ::: 1267684735 ::: Process: 9 ended 
+V1 ::: 1267684742 ::: Process: 10 ended 
+V1 ::: 1267684748 ::: Process: 11 ended 
+V1 ::: 1267684754 ::: Process: 12 ended 
+V1 ::: 1267684759 ::: Process: 13 ended 
+V1 ::: 1267684764 ::: Process: 14 ended 
+V1 ::: 1267684769 ::: Process: 15 ended 
+
+real	2m6.029s
+user	6m43.180s
+sys	7m0.160s
