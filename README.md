@@ -1,6 +1,6 @@
-# pCTAS- [pCTAS](#pCTAS)
+# pCTAS
 
-- [pCTAS- pCTAS](#pCTAS--pCTAS)
+- [pCTAS](#pCTAS)
   - [Configuration and invocation](#Configuration-and-invocation)
   - [Performance](#Performance)
 
